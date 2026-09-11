@@ -1,0 +1,153 @@
+:root {
+  --bg: #fff0f6;
+  --card: #ffffff;
+  --ink: #3a1f2e;
+  --muted: #a67089;
+  --line: #f6d8e6;
+
+  --lecture: #ec4899;
+  --lecture-bg: #fce7f3;
+  --practice: #730437;
+  --practice-bg: #ffbed9;
+  --lab: #d946ef;
+  --lab-bg: #fae8ff;
+
+  --accent: #ec4899;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.topbar {
+  padding: 24px 28px;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--ink);
+}
+
+main { padding: 24px 28px 8px; }
+
+.table-wrap {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: auto;
+  box-shadow: 0 4px 20px rgba(236, 72, 153, 0.08);
+}
+
+table.schedule {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 860px;
+}
+
+.schedule thead th {
+  text-align: left;
+  padding: 14px 16px;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+  border-bottom: 1px solid var(--line);
+  background: #fff5fa;
+}
+
+.schedule td {
+  vertical-align: top;
+  padding: 10px;
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+
+.schedule td:last-child { border-right: none; }
+
+.col-pair { width: 90px; }
+
+.pair-cell {
+  padding: 14px 16px !important;
+}
+
+.pair-cell .pair-num {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.pair-cell .pair-time {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.lesson-card {
+  border-radius: 10px;
+  padding: 10px 12px;
+  border-left: 4px solid transparent;
+  min-height: 70px;
+}
+
+.lesson-card--lecture { background: var(--lecture-bg); border-left-color: var(--lecture); }
+.lesson-card--practice { background: var(--practice-bg); border-left-color: var(--practice); }
+.lesson-card--lab { background: var(--lab-bg); border-left-color: var(--lab); }
+
+.lesson-card .type {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.lesson-card--lecture .type { color: var(--lecture); }
+.lesson-card--practice .type { color: var(--practice); }
+.lesson-card--lab .type { color: var(--lab); }
+
+.lesson-card .subject {
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.lesson-card .teacher,
+.lesson-card .room {
+  font-size: 0.82rem;
+  color: #6b4a5a;
+}
+
+.empty-cell { min-height: 70px; }
+
+.legend {
+  display: flex;
+  gap: 20px;
+  padding: 18px 28px 28px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.legend__item { display: flex; align-items: center; gap: 8px; }
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot--lecture { background: var(--lecture); }
+.dot--practice { background: var(--practice); }
+.dot--lab { background: var(--lab); }
+
+@media (max-width: 640px) {
+  .topbar { padding: 16px; }
+  main { padding: 16px 12px; }
+}
